@@ -1,25 +1,46 @@
 services:
-  gateway:
-    build: ./gateway
-    ports:
-      - "8000:8000"
-    volumes:
-      - ./gateway:/app
 
-  auth-service:
-    build: ./auth-service
-    ports:
-      - "8001:8000"
-    environment:
-      APP_ENV: local
-      DB_CONNECTION: sqlite
-      DB_DATABASE: /app/database/database.sqlite
-    volumes:
-      - ./auth-service:/app
+gateway:
+build: ./gateway
+container_name: gateway
+restart: unless-stopped
+ports:
+- "8000:8000"
+volumes:
+- ./gateway:/app
+networks:
+- microservices-network
 
-  project-service:
-    build: ./project-service
-    ports:
-      - "8002:8000"
-    volumes:
-      - ./project-service:/app
+auth-service:
+build: ./auth-service
+container_name: auth-service
+restart: unless-stopped
+ports:
+- "8001:8000"
+environment:
+APP_ENV: production
+DB_CONNECTION: sqlite
+DB_DATABASE: /app/database/database.sqlite
+volumes:
+- ./auth-service:/app
+networks:
+- microservices-network
+
+project-service:
+build: ./project-service
+container_name: project-service
+restart: unless-stopped
+ports:
+- "8002:8000"
+environment:
+APP_ENV: production
+DB_CONNECTION: sqlite
+DB_DATABASE: /app/database/database.sqlite
+volumes:
+- ./project-service:/app
+networks:
+- microservices-network
+
+networks:
+microservices-network:
+driver: bridge
