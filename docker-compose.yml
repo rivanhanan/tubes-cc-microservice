@@ -1,0 +1,25 @@
+services:
+  gateway:
+    build: ./gateway
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./gateway:/app
+
+  auth-service:
+    build: ./auth-service
+    ports:
+      - "8001:8000"
+    environment:
+      APP_ENV: local
+      DB_CONNECTION: sqlite
+      DB_DATABASE: /app/database/database.sqlite
+    volumes:
+      - ./auth-service:/app
+
+  project-service:
+    build: ./project-service
+    ports:
+      - "8002:8000"
+    volumes:
+      - ./project-service:/app
