@@ -1,5 +1,13 @@
 # Tubes CC Microservice (Gateway + Auth-Service + Project-Service)
 
+## Deskripsi
+
+Project ini merupakan implementasi arsitektur **Microservices** menggunakan framework **Laravel** dan **Docker Compose** sebagai bagian dari Tugas Besar Mata Kuliah Cloud Computing.
+
+Aplikasi yang dibangun adalah **Restaurant Management System** yang memiliki tiga service utama, yaitu Gateway Service, Authentication Service, dan Project Service. Gateway bertindak sebagai pintu masuk seluruh request dari client, sedangkan Auth Service menangani autentikasi pengguna dan Project Service mengelola data kategori, menu, serta resep makanan.
+
+Seluruh service berjalan pada container Docker yang saling terhubung melalui satu network sehingga dapat berkomunikasi menggunakan nama service masing-masing.
+
 ## Arsitektur
 Proyek ini merupakan aplikasi microservice berbasis **Laravel** yang terdiri dari:
 - **gateway**: UI (Blade) + reverse proxy sederhana ke API antar service.
@@ -7,6 +15,54 @@ Proyek ini merupakan aplikasi microservice berbasis **Laravel** yang terdiri dar
 - **project-service**: manajemen data (contoh: categories/menus/recipes) via API.
 
 Semua service dijalankan dengan **Docker Compose** dalam network yang sama.
+
+## Teknologi yang Digunakan
+
+* Laravel 12
+* PHP 8.x
+* Docker
+* Docker Compose
+* SQLite
+* REST API
+* Bootstrap 5
+* Blade Template Engine
+
+## Arsitektur Sistem
+           Browser
+               │
+               ▼
+      Gateway Service
+          │        │
+          ▼        ▼
+ Auth Service   Project Service
+                    │
+                    ▼
+              SQLite Database
+
+## Fitur
+
+- Login dan Register
+- Dashboard Admin
+- Dashboard User
+- Manajemen Categories
+- Manajemen Menus
+- Manajemen Recipes
+- REST API Communication
+- Dockerized Microservices
+
+## Akses Aplikasi
+
+Gateway
+
+http://localhost:8000
+
+Auth Service API
+
+http://localhost:8001
+
+Project Service API
+
+http://localhost:8002
 
 ## Cara Jalankan (Docker Compose)
 Pastikan Docker Desktop sudah aktif, lalu jalankan dari root repository ini:
