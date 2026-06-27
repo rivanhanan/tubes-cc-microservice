@@ -1,119 +1,145 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Login</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Restaurant System</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
 </head>
 
-<body class="bg-slate-900 flex items-center justify-center h-screen">
+<body class="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 flex items-center justify-center">
 
-<div class="bg-slate-800 p-8 rounded-xl shadow-lg w-96">
+<div class="w-full max-w-lg">
 
-    <h1 class="text-3xl text-white font-bold text-center mb-6">
-        Login
-    </h1>
+    <div class="bg-slate-800/90 backdrop-blur-xl rounded-3xl shadow-2xl border border-slate-700 p-10 hover:shadow-cyan-500/20 transition duration-300">
 
-    <form id="loginForm">
+        <div class="text-center">
 
-        <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            class="w-full p-3 mb-4 rounded bg-slate-700 text-white"
-            required
-        >
+            <div class="text-7xl mb-4">
+                🍽️
+            </div>
 
-        <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            class="w-full p-3 mb-4 rounded bg-slate-700 text-white"
-            required
-        >
+            <h1 class="text-4xl font-bold text-white">
+                Restaurant System
+            </h1>
 
-        <button
-            type="submit"
-            class="w-full bg-blue-600 hover:bg-blue-700 text-white p-3 rounded"
-        >
-            Login
-        </button>
+            <p class="text-slate-300 mt-2 text-lg font-medium">
+    Selamat Datang 
+</p>
 
-    </form>
+<p class="text-slate-400 text-sm mt-2">
+    Masuk untuk mengelola kategori, menu, dan resep restoran.
+</p>
 
-    <p id="message" class="text-center mt-4"></p>
+        </div>
 
-    <div class="text-center mt-4">
-        <a href="/register-page" class="text-blue-400">
-            Register
-        </a>
+        <div class="mt-8 space-y-5">
+
+            <input
+    id="email"
+    type="email"
+    placeholder="📧 Email"
+    class="w-full p-4 rounded-xl bg-slate-700 border border-slate-600 text-white outline-none transition duration-300 focus:ring-2 focus:ring-cyan-500 focus:border-cyan-400">
+
+            <div class="relative">
+
+                <input
+    id="password"
+    type="password"
+    placeholder="🔒 Password"
+    class="w-full p-4 rounded-xl bg-slate-700 border border-slate-600 text-white outline-none transition duration-300 focus:ring-2 focus:ring-cyan-500 focus:border-cyan-400">
+
+            </div>
+
+            <button
+                onclick="login()"
+                class="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 transition duration-300 p-4 rounded-xl font-bold text-white shadow-lg hover:scale-105">
+
+                Login
+
+            </button>
+
+        </div>
+
+        <div class="text-center mt-8">
+
+    <span class="text-slate-400">
+        Belum punya akun?
+    </span>
+
+    <a href="/register-page"
+       class="text-cyan-400 hover:text-cyan-300 font-semibold">
+
+        Register
+
+    </a>
+
+</div>
+
+
     </div>
 
 </div>
 
 <script>
 
-document.getElementById('loginForm').addEventListener('submit', async function(e){
+async function login(){
 
-    e.preventDefault();
+    let response = await fetch('/login',{
 
-    const email =
-        document.querySelector('input[name="email"]').value;
+        method:'POST',
 
-    const password =
-        document.querySelector('input[name="password"]').value;
-
-    const response = await fetch('/login', {
-
-        method: 'POST',
-
-        headers: {
-            'Content-Type': 'application/json'
+        headers:{
+            'Content-Type':'application/json'
         },
 
-        body: JSON.stringify({
-            email,
-            password
+        body:JSON.stringify({
+
+            email:document.getElementById('email').value,
+
+            password:document.getElementById('password').value
+
         })
 
     });
 
-    const data = await response.json();
+    let data = await response.json();
 
     if(data.token){
 
-        localStorage.setItem('token', data.token);
-        localStorage.setItem('user_name', data.user.name);
-        localStorage.setItem('role', data.user.role);
+        localStorage.setItem('token',data.token);
 
-        document.getElementById('message').innerHTML =
-            '<span class="text-green-400">Login Success</span>';
+        localStorage.setItem('user_name',data.user.name);
 
-        setTimeout(() => {
+        localStorage.setItem('role',data.user.role);
 
-            if(data.user.role === 'admin'){
+        if(data.user.role=='admin'){
 
-            window.location.href = '/dashboard';
+            window.location='/dashboard';
 
         }else{
 
-        window.location.href = '/dashboard-user';
+            window.location='/dashboard-user';
 
         }
 
-        }, 1000);
-
     }else{
 
-        document.getElementById('message').innerHTML =
-            '<span class="text-red-400">Login Failed</span>';
-
-        console.log(data);
+        alert(data.message);
 
     }
 
-});
+}
 
 </script>
 
 </body>
+
 </html>

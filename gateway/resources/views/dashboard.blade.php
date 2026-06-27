@@ -28,206 +28,339 @@ if(!token){
 
 <!-- Navbar -->
 
-<nav class="bg-slate-900 border-b border-slate-800">
-
+<nav class="bg-slate-900/95 backdrop-blur-md border-b border-slate-800 shadow-lg sticky top-0 z-50">
 
 <div class="container mx-auto px-6 py-4 flex justify-between items-center">
 
-    <h1 class="text-2xl font-bold text-cyan-400">
-        🚀 Microservices Dashboard
-    </h1>
+    <!-- Logo -->
+
+    <div>
+
+        <h1 class="text-3xl font-bold text-cyan-400">
+
+            🍽 Restaurant Admin
+
+        </h1>
+
+        <p class="text-slate-400 text-sm mt-1">
+
+            Laravel Microservices Dashboard
+
+        </p>
+
+    </div>
+
+    <!-- Right Menu -->
 
     <div class="flex items-center gap-4">
 
-    <span id="userName"
-      class="text-cyan-400 font-semibold">
-      Loading...
-</span>
+        <div class="text-right">
 
-    <span id="userRole"
-      class="bg-red-600 px-3 py-1 rounded-full text-xs font-bold">
-      ADMIN
-</span>
+            <div
+                id="userName"
+                class="text-cyan-400 font-bold">
 
-    <a href="/" class="text-slate-300 hover:text-white">
-        Home
-    </a>
+                Loading...
 
-    <button
-        onclick="logout()"
-        class="bg-red-600 px-4 py-2 rounded-lg hover:bg-red-700">
-        Logout
-    </button>
+            </div>
+
+            <div class="text-slate-400 text-xs">
+
+                Welcome Back 👋
+
+            </div>
+
+        </div>
+
+        <span
+            id="userRole"
+            class="bg-gradient-to-r from-red-500 to-red-700 px-4 py-2 rounded-full text-xs font-bold shadow">
+
+            ADMIN
+
+        </span>
+
+        <a
+            href="/"
+            class="bg-slate-800 hover:bg-slate-700 px-4 py-2 rounded-lg transition duration-300">
+
+            🏠 Home
+
+        </a>
+
+        <button
+            onclick="logout()"
+            class="bg-red-600 hover:bg-red-700 hover:scale-105 transition duration-300 px-5 py-2 rounded-lg font-semibold shadow">
+
+            🚪 Logout
+
+        </button>
+
+    </div>
 
 </div>
-
-</div>
-
 
 </nav>
 
-<!-- Header -->
+<!-- Hero Dashboard -->
 
 <div class="container mx-auto px-6 py-10">
 
+    <div class="bg-gradient-to-r from-cyan-600 via-blue-700 to-indigo-700 rounded-3xl p-10 shadow-2xl overflow-hidden relative">
 
-<h2 class="text-5xl font-bold mb-4">
-    Restaurant Catalog System
-</h2>
+        <!-- Background Decoration -->
 
-<p class="text-slate-400">
-    Laravel Microservices Architecture with Docker Container
-</p>
+        <div class="absolute right-8 top-6 text-8xl opacity-10">
+            🍽️
+        </div>
 
+        <div class="relative">
+
+            <span class="inline-flex items-center bg-green-500/20 text-green-200 px-4 py-2 rounded-full text-sm font-semibold border border-green-400 mb-5">
+
+                🟢 System Healthy
+
+            </span>
+
+            <h2 class="text-5xl font-bold text-white leading-tight">
+
+                Restaurant Management Dashboard
+
+            </h2>
+
+            <p class="text-cyan-100 mt-4 text-lg max-w-3xl">
+
+                Manage Categories, Menus, Recipes, and Restaurant Services
+                through a modern Laravel Microservices Architecture.
+
+            </p>
+
+            <div class="flex flex-wrap gap-4 mt-8">
+
+                <div class="bg-white/10 backdrop-blur px-5 py-3 rounded-xl">
+
+                    <div class="text-sm text-cyan-100">
+
+                        Welcome Back
+
+                    </div>
+
+                    <div id="heroUserName"
+                         class="font-bold text-white text-xl">
+
+                        Loading...
+
+                    </div>
+
+                </div>
+
+                <div class="bg-white/10 backdrop-blur px-5 py-3 rounded-xl">
+
+                    <div class="text-sm text-cyan-100">
+
+                        Status
+
+                    </div>
+
+                    <div class="font-bold text-green-300">
+
+                        🟢 All Services Running
+
+                    </div>
+
+                </div>
+
+                <div class="bg-white/10 backdrop-blur px-5 py-3 rounded-xl">
+
+                    <div class="text-sm text-cyan-100">
+
+                        Version
+
+                    </div>
+
+                    <div class="font-bold text-white">
+
+                        v1.0.0
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </div>
 
 <!-- Service Status -->
 
-<div class="container mx-auto px-6">
-
+<div class="container mx-auto px-6 mt-12">
 
 <h3 class="text-3xl font-bold mb-6">
-    Service Status
+
+🖥 Service Status
+
 </h3>
 
 <div class="grid md:grid-cols-3 gap-6">
 
-    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+<!-- Gateway -->
 
-        <div class="flex justify-between">
+<div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:-translate-y-2 hover:border-cyan-500 hover:shadow-cyan-500/20 hover:shadow-xl transition duration-300">
 
-            <h4 class="text-xl font-bold text-blue-400">
-                Gateway Service
-            </h4>
+<div class="flex justify-between items-center">
 
-            <span class="text-green-400">
-                ● RUNNING
-            </span>
+<div>
 
-        </div>
+<div class="text-4xl mb-2">
+🌐
+</div>
 
-        <p class="mt-4 text-slate-400">
-            Request Routing & Frontend UI
-        </p>
+<h4 class="text-2xl font-bold text-cyan-400">
 
-        <div class="mt-4 text-cyan-400">
-            Port 8000
-        </div>
+Gateway Service
 
-    </div>
-
-    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
-
-        <div class="flex justify-between">
-
-            <h4 class="text-xl font-bold text-green-400">
-                Auth Service
-            </h4>
-
-            <span class="text-green-400">
-                ● RUNNING
-            </span>
-
-        </div>
-
-        <p class="mt-4 text-slate-400">
-            JWT Authentication & User Management
-        </p>
-
-        <div class="mt-4 text-cyan-400">
-            Port 8001
-        </div>
-
-    </div>
-
-    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
-
-        <div class="flex justify-between">
-
-            <h4 class="text-xl font-bold text-purple-400">
-                Project Service
-            </h4>
-
-            <span class="text-green-400">
-                ● RUNNING
-            </span>
-
-        </div>
-
-        <p class="mt-4 text-slate-400">
-            Category, Menu, Recipe CRUD
-        </p>
-
-        <div class="mt-4 text-cyan-400">
-            Port 8002
-        </div>
-
-    </div>
+</h4>
 
 </div>
 
+<span class="bg-green-500/20 text-green-300 px-3 py-1 rounded-full text-sm font-semibold border border-green-500">
+
+🟢 Healthy
+
+</span>
 
 </div>
 
-<!-- Statistics -->
+<p class="mt-5 text-slate-400">
 
-<div class="container mx-auto px-6 mt-12">
+Handles all incoming requests and routes them to the appropriate microservice.
 
+</p>
 
-<h3 class="text-3xl font-bold mb-6">
-    System Overview
-</h3>
+<div class="mt-6 flex justify-between items-center">
 
-<div class="grid md:grid-cols-4 gap-6">
+<div class="text-cyan-400 font-bold">
 
-    <div class="bg-blue-600 rounded-2xl p-6 text-center">
+Port 8000
 
-        <div class="text-4xl font-bold">
-            3
-        </div>
+</div>
 
-        <div>
-            Services
-        </div>
+<div class="text-slate-500 text-sm">
 
-    </div>
+Frontend
 
-    <div class="bg-green-600 rounded-2xl p-6 text-center">
+</div>
 
-        <div class="text-4xl font-bold">
-            Docker
-        </div>
+</div>
 
-        <div>
-            Containerized
-        </div>
+</div>
 
-    </div>
+<!-- Auth -->
 
-    <div class="bg-purple-600 rounded-2xl p-6 text-center">
+<div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:-translate-y-2 hover:border-green-500 hover:shadow-green-500/20 hover:shadow-xl transition duration-300">
 
-        <div class="text-4xl font-bold">
-            REST
-        </div>
+<div class="flex justify-between items-center">
 
-        <div>
-            API
-        </div>
+<div>
 
-    </div>
+<div class="text-4xl mb-2">
+🔐
+</div>
 
-    <div class="bg-orange-600 rounded-2xl p-6 text-center">
+<h4 class="text-2xl font-bold text-green-400">
 
-        <div class="text-4xl font-bold">
-            JWT
-        </div>
+Auth Service
 
-        <div>
-            Security
-        </div>
+</h4>
 
-    </div>
+</div>
+
+<span class="bg-green-500/20 text-green-300 px-3 py-1 rounded-full text-sm font-semibold border border-green-500">
+
+🟢 Healthy
+
+</span>
+
+</div>
+
+<p class="mt-5 text-slate-400">
+
+JWT Authentication, Login, Register and User Authorization.
+
+</p>
+
+<div class="mt-6 flex justify-between items-center">
+
+<div class="text-cyan-400 font-bold">
+
+Port 8001
+
+</div>
+
+<div class="text-slate-500 text-sm">
+
+Security
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Project -->
+
+<div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:-translate-y-2 hover:border-purple-500 hover:shadow-purple-500/20 hover:shadow-xl transition duration-300">
+
+<div class="flex justify-between items-center">
+
+<div>
+
+<div class="text-4xl mb-2">
+📦
+</div>
+
+<h4 class="text-2xl font-bold text-purple-400">
+
+Project Service
+
+</h4>
+
+</div>
+
+<span class="bg-green-500/20 text-green-300 px-3 py-1 rounded-full text-sm font-semibold border border-green-500">
+
+🟢 Healthy
+
+</span>
+
+</div>
+
+<p class="mt-5 text-slate-400">
+
+Handles Categories, Menus, Recipes and Restaurant Data.
+
+</p>
+
+<div class="mt-6 flex justify-between items-center">
+
+<div class="text-cyan-400 font-bold">
+
+Port 8002
+
+</div>
+
+<div class="text-slate-500 text-sm">
+
+Database
+
+</div>
+
+</div>
+
+</div>
 
 </div>
 
@@ -239,8 +372,8 @@ if(!token){
 <div class="container mx-auto px-6 mt-12">
 
     <h3 class="text-3xl font-bold mb-6">
-        Live Statistics
-    </h3>
+    📊 Restaurant Statistics
+</h3>
 
     <div class="grid md:grid-cols-4 gap-6">
 
@@ -267,7 +400,7 @@ if(!token){
             </div>
 
             <div class="text-3xl font-bold text-green-400">
-                3
+                9
             </div>
 
             <div class="text-slate-400">
@@ -283,7 +416,7 @@ if(!token){
             </div>
 
             <div class="text-3xl font-bold text-purple-400">
-                1
+                9
             </div>
 
             <div class="text-slate-400">
@@ -292,21 +425,21 @@ if(!token){
 
         </div>
 
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center hover:-translate-y-2 hover:border-orange-500 hover:shadow-orange-500/20 hover:shadow-xl transition duration-300">
 
-            <div class="text-5xl mb-3">
-                ⚡
-            </div>
+    <div class="text-5xl mb-3">
+        👥
+    </div>
 
-            <div class="text-3xl font-bold text-yellow-400">
-                100%
-            </div>
+    <div class="text-3xl font-bold text-orange-400">
+        2
+    </div>
 
-            <div class="text-slate-400">
-                Services Running
-            </div>
+    <div class="text-slate-400">
+        Users
+    </div>
 
-        </div>
+</div>
 
     </div>
 
@@ -317,56 +450,98 @@ if(!token){
 <div class="container mx-auto px-6 mt-12">
 
     <h3 class="text-3xl font-bold mb-6">
-        Restaurant Features
+        🍽 Restaurant Features
     </h3>
 
     <div class="grid md:grid-cols-3 gap-6">
 
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <!-- Menu Management -->
 
-            <div class="text-5xl mb-4">
-                🍔
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:-translate-y-2 hover:border-yellow-400 hover:shadow-yellow-500/20 hover:shadow-xl transition duration-300">
+
+            <div class="flex justify-between items-center">
+
+                <div class="text-5xl">
+                    🍔
+                </div>
+
+                <span class="bg-yellow-500/20 text-yellow-300 px-3 py-1 rounded-full text-xs font-semibold border border-yellow-500">
+                    FEATURE
+                </span>
+
             </div>
 
-            <h4 class="text-xl font-bold text-yellow-400">
+            <h4 class="text-2xl font-bold text-yellow-400 mt-5">
                 Menu Management
             </h4>
 
             <p class="mt-3 text-slate-400">
-                Manage restaurant menu data using REST API architecture.
+                Create, update, delete, and organize restaurant menus using REST API architecture.
             </p>
+
+            <div class="mt-6 text-yellow-400 font-semibold">
+                Manage Menus →
+            </div>
 
         </div>
 
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <!-- Recipe -->
 
-            <div class="text-5xl mb-4">
-                📖
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:-translate-y-2 hover:border-green-400 hover:shadow-green-500/20 hover:shadow-xl transition duration-300">
+
+            <div class="flex justify-between items-center">
+
+                <div class="text-5xl">
+                    👨‍🍳
+                </div>
+
+                <span class="bg-green-500/20 text-green-300 px-3 py-1 rounded-full text-xs font-semibold border border-green-500">
+                    FEATURE
+                </span>
+
             </div>
 
-            <h4 class="text-xl font-bold text-green-400">
+            <h4 class="text-2xl font-bold text-green-400 mt-5">
                 Recipe Management
             </h4>
 
             <p class="mt-3 text-slate-400">
-                Store and organize recipes for every menu item.
+                Store ingredients and cooking instructions for every restaurant menu.
             </p>
+
+            <div class="mt-6 text-green-400 font-semibold">
+                Manage Recipes →
+            </div>
 
         </div>
 
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <!-- Security -->
 
-            <div class="text-5xl mb-4">
-                🔐
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:-translate-y-2 hover:border-cyan-400 hover:shadow-cyan-500/20 hover:shadow-xl transition duration-300">
+
+            <div class="flex justify-between items-center">
+
+                <div class="text-5xl">
+                    🔐
+                </div>
+
+                <span class="bg-cyan-500/20 text-cyan-300 px-3 py-1 rounded-full text-xs font-semibold border border-cyan-500">
+                    SECURITY
+                </span>
+
             </div>
 
-            <h4 class="text-xl font-bold text-cyan-400">
+            <h4 class="text-2xl font-bold text-cyan-400 mt-5">
                 JWT Authentication
             </h4>
 
             <p class="mt-3 text-slate-400">
-                Secure login and registration using JWT authentication.
+                Secure login system using JSON Web Token authentication with role-based access.
             </p>
+
+            <div class="mt-6 text-cyan-400 font-semibold">
+                Authentication →
+            </div>
 
         </div>
 
@@ -378,144 +553,139 @@ if(!token){
 
 <div class="container mx-auto px-6 mt-12">
 
-
-<h3 class="text-3xl font-bold mb-6">
-    Management Menu
-</h3>
-
-<div class="grid md:grid-cols-3 gap-6">
-
-    <a href="/categories-page"
-       class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-cyan-500 transition">
-
-        <div class="text-5xl mb-4">
-            📂
-        </div>
-
-        <h4 class="text-xl font-bold text-cyan-400">
-            Categories
-        </h4>
-
-        <p class="mt-3 text-slate-400">
-            View all restaurant categories.
-        </p>
-
-    </a>
-
-    <a href="/menus-page"
-       class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-green-500 transition">
-
-        <div class="text-5xl mb-4">
-            🍽️
-        </div>
-
-        <h4 class="text-xl font-bold text-green-400">
-            Menus
-        </h4>
-
-        <p class="mt-3 text-slate-400">
-            Browse all available menu items.
-        </p>
-
-    </a>
-
-    <a href="/recipes-page"
-       class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-purple-500 transition">
-
-        <div class="text-5xl mb-4">
-            👨‍🍳
-        </div>
-
-        <h4 class="text-xl font-bold text-purple-400">
-            Recipes
-        </h4>
-
-        <p class="mt-3 text-slate-400">
-            View recipe information and ingredients.
-        </p>
-
-    </a>
-
-</div>
-
-</div>
-
-<div class="mt-10 text-center">
-
-    <a href="/project/categories"
-       class="bg-cyan-600 px-5 py-3 rounded-lg mr-3 hover:bg-cyan-700">
-        Raw Categories API
-    </a>
-
-    <a href="/project/menus"
-       class="bg-green-600 px-5 py-3 rounded-lg mr-3 hover:bg-green-700">
-        Raw Menus API
-    </a>
-
-    <a href="/project/recipes"
-       class="bg-purple-600 px-5 py-3 rounded-lg hover:bg-purple-700">
-        Raw Recipes API
-    </a>
-
-</div>
-
-<!-- Architecture Overview -->
-
-<div class="container mx-auto px-6 mt-12">
-
     <h3 class="text-3xl font-bold mb-6">
-        Architecture Overview
+        ⚙️ Management Menu
     </h3>
 
-    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8">
+    <div class="grid md:grid-cols-3 gap-6">
 
-        <div class="grid md:grid-cols-3 gap-6 text-center">
+        <!-- Categories -->
 
-            <div>
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:-translate-y-2 hover:border-cyan-500 hover:shadow-cyan-500/20 hover:shadow-xl transition duration-300">
 
-                <div class="text-5xl mb-3">
-                    🌐
+            <div class="flex justify-between items-center">
+
+                <div class="text-5xl">
+                    📂
                 </div>
 
-                <h4 class="text-xl font-bold text-blue-400">
-                    Gateway
-                </h4>
-
-                <p class="text-slate-400 mt-2">
-                    Frontend UI & Request Routing
-                </p>
+                <span class="bg-cyan-500/20 text-cyan-300 px-3 py-1 rounded-full text-xs font-semibold border border-cyan-500">
+                    2 DATA
+                </span>
 
             </div>
 
-            <div>
+            <h4 class="text-2xl font-bold text-cyan-400 mt-5">
+                Categories
+            </h4>
 
-                <div class="text-5xl mb-3">
-                    🔐
-                </div>
+            <p class="text-slate-400 mt-3">
+                Manage restaurant categories such as Food and Beverage.
+            </p>
 
-                <h4 class="text-xl font-bold text-green-400">
-                    Auth Service
-                </h4>
+            <div class="mt-6 flex justify-between items-center">
 
-                <p class="text-slate-400 mt-2">
-                    Login, Register & JWT
-                </p>
+                <a href="/categories-page"
+                   class="text-cyan-400 font-semibold hover:text-cyan-300">
+
+                    Open Management →
+
+                </a>
+
+                <a href="/project/categories"
+                   class="text-xs text-slate-400 hover:text-white">
+
+                    API
+
+                </a>
 
             </div>
 
-            <div>
+        </div>
 
-                <div class="text-5xl mb-3">
-                    📦
+        <!-- Menus -->
+
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:-translate-y-2 hover:border-green-500 hover:shadow-green-500/20 hover:shadow-xl transition duration-300">
+
+            <div class="flex justify-between items-center">
+
+                <div class="text-5xl">
+                    🍽️
                 </div>
 
-                <h4 class="text-xl font-bold text-purple-400">
-                    Project Service
-                </h4>
+                <span class="bg-green-500/20 text-green-300 px-3 py-1 rounded-full text-xs font-semibold border border-green-500">
+                    9 DATA
+                </span>
 
-                <p class="text-slate-400 mt-2">
-                    Categories, Menus & Recipes
-                </p>
+            </div>
+
+            <h4 class="text-2xl font-bold text-green-400 mt-5">
+                Menus
+            </h4>
+
+            <p class="text-slate-400 mt-3">
+                Create, update and manage all restaurant food and beverage menus.
+            </p>
+
+            <div class="mt-6 flex justify-between items-center">
+
+                <a href="/menus-page"
+                   class="text-green-400 font-semibold hover:text-green-300">
+
+                    Open Management →
+
+                </a>
+
+                <a href="/project/menus"
+                   class="text-xs text-slate-400 hover:text-white">
+
+                    API
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Recipes -->
+
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:-translate-y-2 hover:border-purple-500 hover:shadow-purple-500/20 hover:shadow-xl transition duration-300">
+
+            <div class="flex justify-between items-center">
+
+                <div class="text-5xl">
+                    👨‍🍳
+                </div>
+
+                <span class="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-xs font-semibold border border-purple-500">
+                    9 DATA
+                </span>
+
+            </div>
+
+            <h4 class="text-2xl font-bold text-purple-400 mt-5">
+                Recipes
+            </h4>
+
+            <p class="text-slate-400 mt-3">
+                Store ingredients and cooking instructions for every menu.
+            </p>
+
+            <div class="mt-6 flex justify-between items-center">
+
+                <a href="/recipes-page"
+                   class="text-purple-400 font-semibold hover:text-purple-300">
+
+                    Open Management →
+
+                </a>
+
+                <a href="/project/recipes"
+                   class="text-xs text-slate-400 hover:text-white">
+
+                    API
+
+                </a>
 
             </div>
 
@@ -525,14 +695,247 @@ if(!token){
 
 </div>
 
+<!-- Architecture Overview -->
+
+<div class="container mx-auto px-6 mt-12">
+
+    <h3 class="text-3xl font-bold mb-6">
+        🏗️ Microservices Architecture
+    </h3>
+
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-10">
+
+        <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+
+            <!-- Browser -->
+
+            <div class="text-center">
+
+                <div class="text-6xl">
+                    💻
+                </div>
+
+                <h4 class="text-xl font-bold text-cyan-400 mt-3">
+                    Client
+                </h4>
+
+                <p class="text-slate-400 mt-2">
+                    Web Browser
+                </p>
+
+            </div>
+
+            <div class="text-5xl text-slate-500">
+                ➜
+            </div>
+
+            <!-- Gateway -->
+
+            <div class="text-center">
+
+                <div class="text-6xl">
+                    🌐
+                </div>
+
+                <h4 class="text-xl font-bold text-blue-400 mt-3">
+                    Gateway
+                </h4>
+
+                <p class="text-slate-400 mt-2">
+                    Frontend UI<br>
+                    Request Routing
+                </p>
+
+            </div>
+
+            <div class="text-5xl text-slate-500">
+                ➜
+            </div>
+
+            <!-- Auth -->
+
+            <div class="text-center">
+
+                <div class="text-6xl">
+                    🔐
+                </div>
+
+                <h4 class="text-xl font-bold text-green-400 mt-3">
+                    Auth Service
+                </h4>
+
+                <p class="text-slate-400 mt-2">
+                    Login<br>
+                    JWT Authentication
+                </p>
+
+            </div>
+
+            <div class="text-5xl text-slate-500">
+                ➜
+            </div>
+
+            <!-- Project -->
+
+            <div class="text-center">
+
+                <div class="text-6xl">
+                    📦
+                </div>
+
+                <h4 class="text-xl font-bold text-purple-400 mt-3">
+                    Project Service
+                </h4>
+
+                <p class="text-slate-400 mt-2">
+                    Category<br>
+                    Menu & Recipe
+                </p>
+
+            </div>
+
+            <div class="text-5xl text-slate-500">
+                ➜
+            </div>
+
+            <!-- Database -->
+
+            <div class="text-center">
+
+                <div class="text-6xl">
+                    🗄️
+                </div>
+
+                <h4 class="text-xl font-bold text-orange-400 mt-3">
+                    SQLite
+                </h4>
+
+                <p class="text-slate-400 mt-2">
+                    Database
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Description -->
+
+        <div class="mt-10 border-t border-slate-700 pt-6">
+
+            <p class="text-center text-slate-400 leading-8">
+
+                Every client request is received by the <span class="text-cyan-400 font-semibold">Gateway</span>,
+                authenticated through the <span class="text-green-400 font-semibold">Auth Service</span>,
+                processed by the <span class="text-purple-400 font-semibold">Project Service</span>,
+                and finally stored in the <span class="text-orange-400 font-semibold">SQLite Database</span>.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
 <!-- Footer -->
 
-<footer class="mt-20 py-8 border-t border-slate-800 text-center text-slate-500">
+<footer class="mt-20 border-t border-slate-800 bg-slate-950">
 
+<div class="container mx-auto px-6 py-10">
 
-Cloud Computing - Microservices Project<br>
-Telkom University 2026
+    <div class="grid md:grid-cols-3 gap-10">
 
+        <!-- Project -->
+
+        <div>
+
+            <h3 class="text-2xl font-bold text-white">
+
+                🍽 Restaurant Management System
+
+            </h3>
+
+            <p class="text-slate-400 mt-4 leading-7">
+
+                Modern Restaurant Management application built using
+                Laravel Microservices Architecture with Docker,
+                REST API and JWT Authentication.
+
+            </p>
+
+        </div>
+
+        <!-- Technology -->
+
+        <div>
+
+            <h3 class="text-xl font-bold text-cyan-400 mb-4">
+
+                ⚙ Technology Stack
+
+            </h3>
+
+            <ul class="space-y-2 text-slate-400">
+
+                <li>✅ Laravel 12</li>
+
+                <li>✅ Docker</li>
+
+                <li>✅ REST API</li>
+
+                <li>✅ JWT Authentication</li>
+
+                <li>✅ SQLite Database</li>
+
+                <li>✅ Microservices</li>
+
+            </ul>
+
+        </div>
+
+        <!-- Information -->
+
+        <div>
+
+            <h3 class="text-xl font-bold text-green-400 mb-4">
+
+                📚 Project Information
+
+            </h3>
+
+            <ul class="space-y-2 text-slate-400">
+
+                <li>Cloud Computing Final Project</li>
+
+                <li>Telkom University</li>
+
+                <li>Academic Year 2025 / 2026</li>
+
+                <li>Version 1.0.0</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div class="border-t border-slate-800 mt-10 pt-6 text-center">
+
+        <p class="text-slate-500">
+
+            © 2026 Restaurant Management System
+
+        </p>
+
+        <p class="text-slate-600 mt-2 text-sm">
+
+            Built with ❤️ using Laravel • Docker • REST API • JWT Authentication
+
+        </p>
+
+    </div>
+
+</div>
 
 </footer>
 
@@ -547,8 +950,11 @@ window.onload = function () {
 
     if(userName){
 
-        document.getElementById('userName').innerText =
-            '👤 ' + userName;
+        document.getElementById('userName').innerHTML =
+    '👤 ' + userName;
+
+document.getElementById('heroUserName').innerHTML =
+    userName;
 
     }
 

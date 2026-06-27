@@ -67,6 +67,35 @@ Route::get('/project/categories', function () {
 
 });
 
+Route::post('/project/categories', function (Request $request) {
+
+    return Http::acceptJson()
+        ->post(
+            'http://project-service:8000/api/categories',
+            $request->all()
+        )
+        ->json();
+
+});
+
+Route::put('/project/categories/{id}', function (Request $request, $id) {
+
+    return Http::acceptJson()
+        ->put(
+            "http://project-service:8000/api/categories/$id",
+            $request->all()
+        )
+        ->json();
+
+});
+
+Route::delete('/project/categories/{id}', function ($id) {
+
+    return Http::delete(
+        "http://project-service:8000/api/categories/$id"
+    )->json();
+
+});
 
 /*
 |--------------------------------------------------------------------------
